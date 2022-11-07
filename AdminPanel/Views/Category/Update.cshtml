@@ -1,0 +1,17 @@
+﻿@model EntityLayer.Entities.Category
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+@using (Html.BeginForm("Update", "Category", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Kategori Adı")
+        @Html.TextBoxFor(x=>x.Name/*, new { @class = "form-control" }*/)
+        @Html.ValidationMessageFor(x=>x.Name)
+        <br /><br />
+        <button class="btn btn-outline-success"><i class="bi bi-check-lg"> Güncelle</i></button>
+    </div>
+}

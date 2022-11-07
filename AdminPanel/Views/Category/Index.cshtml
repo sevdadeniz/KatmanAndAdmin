@@ -1,0 +1,52 @@
+﻿@using EntityLayer.Entities
+@model List<Category>
+
+@{
+    ViewData["Title"] = "Ana Sayfa";
+}
+
+<br/>
+
+
+<h5>
+    Yeni kategori Ekle <a href="/Category/Add" style="justify-content:end" class="btn btn-outline-info mb-2"><i class="bi bi-plus-circle"></i></a>
+</h5>
+
+
+<br />
+
+<div class="card">
+    <div class="card-body">
+
+       
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Kategori No</th>
+                    <th>Kategori Adı</th>
+                    <th>Düzenle</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var Category in Model)
+                {
+                <tr>
+                    <td>@Category.Id</td>
+                    <td>@Category.Name</td>
+                    <td>
+                            <a class="btn btn-outline-success" href="/Category/Update/@Category.Id"><i class="bi bi-pencil"></i></a>
+                            <a class="btn btn-outline-danger" href="/Category/Delete/@Category.Id"><i class="bi bi-trash"></i></a>
+                    </td>
+                </tr>
+                }
+
+             
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+
+

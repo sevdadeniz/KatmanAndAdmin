@@ -1,0 +1,18 @@
+﻿@model EntityLayer.Entities.Category
+@{
+    ViewData["Title"] = "Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+@using (Html.BeginForm("Add", "Category", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Kategori Adı")
+        @Html.TextBoxFor(x=>x.Name)
+        @Html.ValidationMessageFor(x=>x.Name)
+        <br /><br />
+        <button class="btn btn-outline-success"><i class="bi bi-plus-circle"></i> Ekle</button>
+    </div>
+}
+
